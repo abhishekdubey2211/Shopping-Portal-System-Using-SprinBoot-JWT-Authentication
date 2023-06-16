@@ -1,8 +1,12 @@
 # Shopping-Portal-System-Using-SprinBoot-JWT-Authentication
 
-eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpc3MiOiJ0ZXN0X2lzc3VlciIsIlJPTEUiOiJhZG1pbiIsIlNVQkpFQ1RfSUQiOjEsImlhdCI6MTY4NjkzOTcxMSwiZXhwIjoxNjg3NTQ0NTExfQ.dp5zwTQ4kC4Zib7-Vw7OLxqbLCJsBuQ28DZPoQuKWUqiXIIswfBYqGfBdP9v2vYEaov14cOGNR93rS_RftcFfA
-Postman link of your working live API collection
+                                            Postman link of your working live API collection
+***********************************************************************************************************************************************************
+CollectionLink:-
+https://gold-astronaut-706993.postman.co/workspace/My-Workspace~6d25a4b9-1438-450b-811b-58f1a81711fd/collection/28031818-0d3cf6f1-0725-4057-9856-a0542e2c75df?action=share&creator=28031818
+***********************************************************************************************************************************************************
 
+MySql
 Create database shoppingPortal;
 USE shoppingPortal;
 SHOW TABLES;
@@ -14,7 +18,7 @@ select * from auth_user;
 select * from product;
 select * from order_details;
 
-
+***********************************************************************************************************************************************************
 For registering an  Admin into system
 POST        http://localhost:8080/user/register
 {
