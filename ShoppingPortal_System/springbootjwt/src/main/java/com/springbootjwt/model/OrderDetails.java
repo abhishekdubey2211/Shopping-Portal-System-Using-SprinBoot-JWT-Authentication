@@ -1,7 +1,5 @@
 package com.springbootjwt.model;
 
-
-
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -33,9 +31,11 @@ public class OrderDetails {
 	private int orderId;
 
 	@OneToOne
+	//an single order details can hold single product detail
 	private Product product;
 
 	@OneToOne
+	//a single order detail can holds single user detail
 	private User user;
 	
 	@Column
@@ -45,7 +45,6 @@ public class OrderDetails {
 	@NotNull
 	private int quantity;
 
-	
 	@Column
 	private LocalDate orderDate=LocalDate.now();
 	

@@ -25,7 +25,7 @@ public class Role
  
     //Role of a client
     @NotNull
-    @Column(name="User_Role")
+    @Column(name="user_role")
     @Size(max=25, message = "Role must be at least 25 characters")
     @NotBlank(message = "Must Enter the Role of an User")
     private String name;

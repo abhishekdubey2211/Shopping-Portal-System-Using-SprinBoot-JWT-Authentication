@@ -27,15 +27,7 @@ public class GlobalExceptionHandler
       	ResponseDTO.builder().responseMsg(e.getMsg()).build(),HttpStatus.BAD_REQUEST);
     }
     
-    //used to handle the specific exceptions & sends the custom responses to the client
-//    @ExceptionHandler({Exception.class})
-//    public ResponseEntity<ResponseDTO>handleException(Exception e)
-//    {
-//      logger.info("Unknown error occur {} ",e.getMessage(),e);
-//      return new ResponseEntity<>(
-//      ResponseDTO.builder().responseMsg(e.getMessage()).build(),HttpStatus.INTERNAL_SERVER_ERROR);
-//    }
-    
+    //use to handle the the exceptions if resource not found
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<?> resourceNotFoundHandling(ResourceNotFoundException ex, WebRequest req)
     {

@@ -6,9 +6,10 @@ import org.springframework.stereotype.Repository;
 
 import com.springbootjwt.model.User;
 
+//creating repository interface extends JpaRepository 
 //inherits a set of CRUD (Create, Read, Update, Delete) operations 
 @Repository
 public interface UserRepository extends JpaRepository<User,Long>
-	{
-		Optional<User> findByEmailAddress (String emailAddress);
-	}
+{
+	Optional<User> findByEmailAddress (String emailAddress);
+}

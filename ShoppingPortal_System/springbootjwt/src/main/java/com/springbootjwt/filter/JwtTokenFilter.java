@@ -27,11 +27,12 @@ public class JwtTokenFilter extends OncePerRequestFilter
 
     @Override
     protected void 
-    	doFilterInternal(
+    	doFilterInternal
+    	(
         	HttpServletRequest request,
         	HttpServletResponse response,
 			FilterChain filterChain
-           ) throws ServletException, IOException 
+         )  throws ServletException, IOException 
      {      
     	final String header = request.getHeader(HttpHeaders.AUTHORIZATION);        
             if (header==null || !header.startsWith("Bearer ")) 
@@ -51,8 +52,7 @@ public class JwtTokenFilter extends OncePerRequestFilter
             
             //authority granted to an authentication object
             List<GrantedAuthority> grantedAuthorityList=new ArrayList<>();
-            grantedAuthorityList.add(
-            new SimpleGrantedAuthority(jwtTokenDTO.getRole()));
+            grantedAuthorityList.add(new SimpleGrantedAuthority(jwtTokenDTO.getRole()));
             Principal principal=new Principal();
             principal.setToken(token);
             principal.setEmailAddress(jwtTokenDTO.getSubject());

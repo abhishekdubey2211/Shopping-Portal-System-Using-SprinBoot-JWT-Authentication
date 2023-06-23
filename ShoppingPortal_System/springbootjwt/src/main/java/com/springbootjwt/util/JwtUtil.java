@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import com.springbootjwt.dto.JwtTokenDTO;
+import com.springbootjwt.exception.BadRequestException;
 import com.springbootjwt.model.User;
 import java.util.Date;
 
@@ -47,6 +48,10 @@ public class JwtUtil
     		.parseClaimsJws(token);
     		return true;
     	} 
+    	catch(SignatureException ex) {
+    		logger.error("Invalid JWT token - {}", ex.getMessage());
+    		throw new BadRequestException("Invalid JWT Token");
+    	}
     	catch (MalformedJwtException ex)
     	{
     		logger.error("Invalid JWT token - {}", ex.getMessage());

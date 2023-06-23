@@ -4,7 +4,7 @@ import java.util.List;
 import com.springbootjwt.model.OrderDetails;
 import com.springbootjwt.model.Product;
 
-//This Service interface class holds  business logical interface methods 
+//This Service interface class holds  business logical through an interface methods 
 public interface ProductService 
 	{
 		//for adding an products

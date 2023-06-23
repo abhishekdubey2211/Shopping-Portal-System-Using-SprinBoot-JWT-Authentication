@@ -35,18 +35,18 @@ public class OrderDetailsServiceImpl implements OrderDetailsService
 	static int find(LocalDate  orderDate, LocalDate cancelDate)   
 	    {   
 	        Period difference = Period.between(orderDate, cancelDate);   
-	        return difference.getDays();   
+	        return difference.getDays(); 
 	    }  
 	
 	@Override
 	//implementing an interface method for PaymentMode
-	public void checkOut(OrderDetails order) {
+	public void checkOut(OrderDetails order) 
+	{
 		String payMode = order.getPaymentMode();
 		if(!payMode.equalsIgnoreCase("COD"))
 		{
 			throw new BadRequestException("Sorry for the inconvinience, we only have Cash on Delivery payment mode.");
 		}
-		
 	}
 	
 	@Override
@@ -74,6 +74,7 @@ public class OrderDetailsServiceImpl implements OrderDetailsService
 		  //parsing message on placing order
 		  message="*****\tYour order has been placed successfully!!\t*****"+""
 		  		  +"\nCustomer Name: "+u.getName()
+		  		  +"\nORDER ID: "+orderDetails.getOrderId()
 		  		  +"\nProduct Type: "+p.getProductType()
 		  		  +"\nProduct Name: "+p.getName()
 		  		  +"\nPer Product Price: "+p.getPrice()
@@ -98,14 +99,13 @@ public class OrderDetailsServiceImpl implements OrderDetailsService
 
 	
 	//interface method to cancel an placed Order
-	
 	@Override
 	public String cancelOrder(int orderId) 
 	{
 		String message;
 		LocalDate cancelDate=LocalDate.now();
 		//manual date set 
-		//LocalDate cancelDate=LocalDate.of(2023,06,26);
+//		LocalDate cancelDate=LocalDate.of(2023,07,03);
 		OrderDetails orderObj=orderDetailsRepository.findById(orderId).get();
 		LocalDate orderDate=orderObj.getOrderDate();
 		int days=find(orderDate,cancelDate);
@@ -151,5 +151,6 @@ public class OrderDetailsServiceImpl implements OrderDetailsService
   		+"\nProduct Quantity: "+orderDetails.getQuantity()
   		+"\nTotal amount: "+orderDetails.getTotal()
   		+"\nPayment Mode: COD  ( Cash On Delivery )"+"";
+	
 	}	
 }

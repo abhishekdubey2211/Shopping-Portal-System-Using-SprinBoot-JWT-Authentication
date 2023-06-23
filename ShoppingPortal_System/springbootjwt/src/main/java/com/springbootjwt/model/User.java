@@ -25,17 +25,17 @@ public class User
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(name="User_Name",length=20)
+    @Column(name="name",length=20)
     private String name;
 
-    @Column(name="Email_Address",unique=true)
+    @Column(name="email_address",unique=true,length=20)
     private String emailAddress;
 
-    @Column(name="Password")
+    @Column(name="password",length=100)
     private String password;
  
     @NotNull
-    @Column(name="City")
+    @Column(name="city",length=30)
     private String address;
     
     //single role assigned to one user

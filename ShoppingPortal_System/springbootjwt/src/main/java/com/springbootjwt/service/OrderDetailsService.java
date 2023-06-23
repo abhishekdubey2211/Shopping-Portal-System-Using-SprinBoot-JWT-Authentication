@@ -2,7 +2,7 @@ package com.springbootjwt.service;
 
 import com.springbootjwt.model.OrderDetails;
 
-//This Service interface class holds  business logical interface methods 
+//This Service interface class holds  business logical through an interface methods 
 public interface OrderDetailsService 
 {
 	//for placing an order

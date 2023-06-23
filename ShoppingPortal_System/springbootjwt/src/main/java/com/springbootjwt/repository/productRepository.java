@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.springbootjwt.model.Product;
 
+//creating repository interface extends JpaRepository 
 //inherits a set of CRUD (Create, Read, Update, Delete) operations 
 @Repository
 public interface productRepository extends JpaRepository<Product,Integer>

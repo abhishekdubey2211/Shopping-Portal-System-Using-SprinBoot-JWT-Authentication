@@ -34,7 +34,7 @@ public class ProductServiceImpl implements ProductService
 	public Product addProduct(Product product)
 	{
 		product.setStatus("IN STOCK");
-			return productRepository.save(product);
+		return productRepository.save(product);
 	}
 	
 	
@@ -63,7 +63,7 @@ public class ProductServiceImpl implements ProductService
 	}
 
 	@Override
-	// Canceling the details of a product with the given ID
+	//Canceling the details of a product with the given ID
 	public String cancelProduct(int id) 
 	{
 		String message=null;

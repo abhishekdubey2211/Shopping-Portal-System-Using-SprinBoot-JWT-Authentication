@@ -6,7 +6,7 @@ import com.springbootjwt.dto.UserDTO;
 import com.springbootjwt.model.User;
 
 
-//This Service interface class holds  business logical interface methods 
+//This Service interface class holds  business logical through an interface methods 
 public interface UserService
 {
 	  //for user registration

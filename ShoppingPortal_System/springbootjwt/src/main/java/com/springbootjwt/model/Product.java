@@ -28,12 +28,12 @@ public class Product {
 	private int id;
 	
 	@NotNull
-	@Column(length = 25,name="Product_Type")
+	@Column(length = 25,name="product_type")
 	@Pattern(regexp="^[a-zA-Z]{2,25}$", message="Product type should only consist of charactes")
 	private String productType;
 	
 	@NotNull
-	@Column(length = 25,name="Product_Model")
+	@Column(length = 50,name="product_model")
 	private String name;
 
 	@NotNull

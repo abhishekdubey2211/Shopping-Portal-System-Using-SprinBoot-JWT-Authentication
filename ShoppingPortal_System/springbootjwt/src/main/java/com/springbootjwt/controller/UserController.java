@@ -27,15 +27,15 @@ import com.springbootjwt.service.UserService;
 @RequestMapping("/user")
 public class UserController 
 	{
-    	@Autowired
-    	private UserService userService;
+    @Autowired
+    private UserService userService;
 
     //using PostMapping registering user detail along with role
     @PostMapping("/register")
     public ResponseEntity<?> addUser(@Valid @RequestBody UserDTO userDTO)
     {
         userService.registerUser(userDTO);
-        return new ResponseEntity<String>("User registered successfully.", HttpStatus.CREATED);
+        return new ResponseEntity<String>("You have registered successfully.", HttpStatus.CREATED);
     }
     	
     //using PostMapping posting email and user password  for login into system

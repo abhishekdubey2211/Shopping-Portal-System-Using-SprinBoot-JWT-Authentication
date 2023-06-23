@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService
     	{
     		if(u.getEmailAddress().equals(userDTO.getEmailAddress()))
     		{
-    			throw new BadRequestException("User already exists. Please provide new details.");
+    			throw new BadRequestException("User already exists.. Please provide new details.");
     		}
     	}
     	//For retrieving the role of an login client into the system
@@ -78,18 +78,16 @@ public class UserServiceImpl implements UserService
         	//if login credentials not found
             throw new BadRequestException("User Not Found.");
         }
-        if(passwordEncoder.matches
-        	(loginDTO.getPassword(),
-            userOptional.get().getPassword())
-          )
+        if(passwordEncoder.matches(loginDTO.getPassword(),userOptional.get().getPassword()))
         {
+        	//if email password matches JWT Token generates
             return jwtUtil.generateAccessToken
             		(userOptional.get());
         }
         else
         {
         	//if any one the the required credential matches and another credential detail dosn't matches
-           throw new BadRequestException("Invalid UserName Or Password");
+           throw new BadRequestException("Invalid Email Or Password");
         }
     }
 }
