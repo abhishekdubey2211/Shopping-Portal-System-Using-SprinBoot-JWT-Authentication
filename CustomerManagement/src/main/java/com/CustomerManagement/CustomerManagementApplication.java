@@ -20,7 +20,7 @@ public class CustomerManagementApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CustomerManagementApplication.class, args);
-		System.out.println("Customer placed order...");
+		System.out.println("Customer RelationShip Management System...");
 	}
 
 }
